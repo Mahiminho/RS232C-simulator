@@ -6,269 +6,248 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>850</width>
-    <height>598</height>
+    <width>581</width>
+    <height>362</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(170, 255, 255);</string>
+   <string notr="true">background-color: rgb(170, 170, 170);</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="horizontalLayoutWidget">
+   <widget class="QWidget" name="verticalLayoutWidget_4">
     <property name="geometry">
      <rect>
       <x>9</x>
       <y>9</y>
-      <width>831</width>
-      <height>391</height>
+      <width>561</width>
+      <height>291</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QVBoxLayout" name="verticalLayout_4">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="QLabel" name="label_2">
-           <property name="font">
-            <font>
-             <pointsize>20</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(85, 255, 255);
-color: rgb(255, 255, 255);</string>
-           </property>
-           <property name="text">
-            <string>Baud rate</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="lineEditWordDelay">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 4px;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(135, 135, 135);
+color: rgb(255, 255, 255);
+border-radius: 2px;</string>
+             </property>
+             <property name="text">
+              <string> Data bits </string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_4">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(135, 135, 135);
+color: rgb(255, 255, 255);
+border-radius: 2px;</string>
+             </property>
+             <property name="text">
+              <string> Parity </string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="lineEditStopBits">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 4px;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="lineEditDataBits">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 4px;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="comboBoxParity">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);
+ </string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_5">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(135, 135, 135);
+color: rgb(255, 255, 255);
+border-radius: 2px;</string>
+             </property>
+             <property name="text">
+              <string> Stop bits </string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_7">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(135, 135, 135);
+color: rgb(255, 255, 255);
+border-radius: 2px;</string>
+             </property>
+             <property name="text">
+              <string> Word delay </string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(135, 135, 135);
+color: rgb(255, 255, 255);
+border-radius: 2px;</string>
+             </property>
+             <property name="text">
+              <string> COM port </string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QComboBox" name="comboBoxCOMport">
+               <property name="font">
+                <font>
+                 <pointsize>14</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);
+</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="refreshButton">
+               <property name="font">
+                <font>
+                 <pointsize>14</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);
+border-radius: 4px;
+ }
+QPushButton:pressed {
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+border-radius: 4px;
+ }</string>
+               </property>
+               <property name="text">
+                <string>Refresh</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
          </item>
-         <item>
-          <widget class="QLineEdit" name="lineEditBaudRate">
-           <property name="font">
-            <font>
-             <pointsize>15</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(255, 255, 255);</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_7">
-         <item>
-          <widget class="QLabel" name="label_4">
-           <property name="font">
-            <font>
-             <pointsize>20</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(85, 255, 255);
-color: rgb(255, 255, 255);</string>
-           </property>
-           <property name="text">
-            <string>Parity</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="comboBoxParity">
-           <property name="font">
-            <font>
-             <pointsize>15</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(0, 0, 255);
-color: rgb(255, 255, 255);</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_6">
-         <item>
-          <widget class="QLabel" name="label_5">
-           <property name="font">
-            <font>
-             <pointsize>20</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(85, 255, 255);
-color: rgb(255, 255, 255);</string>
-           </property>
-           <property name="text">
-            <string>Stop bits</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEditStopBits">
-           <property name="font">
-            <font>
-             <pointsize>15</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(255, 255, 255);</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
-         <item>
-          <widget class="QLabel" name="label_6">
-           <property name="font">
-            <font>
-             <pointsize>20</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(85, 255, 255);
-color: rgb(255, 255, 255);</string>
-           </property>
-           <property name="text">
-            <string>Data bits</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEditDataBits">
-           <property name="font">
-            <font>
-             <pointsize>15</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(255, 255, 255);</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <item>
-          <widget class="QLabel" name="label_7">
-           <property name="font">
-            <font>
-             <pointsize>20</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(85, 255, 255);
-color: rgb(255, 255, 255);</string>
-           </property>
-           <property name="text">
-            <string>Word delay</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEditWordDelay">
-           <property name="font">
-            <font>
-             <pointsize>15</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(255, 255, 255);</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_8">
-         <item>
-          <widget class="QLabel" name="label">
-           <property name="font">
-            <font>
-             <pointsize>20</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(85, 255, 255);
-color: rgb(255, 255, 255);</string>
-           </property>
-           <property name="text">
-            <string>COM port</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="comboBoxCOMport">
-           <property name="font">
-            <font>
-             <pointsize>15</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(0, 0, 255);
-color: rgb(255, 255, 255);</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="refreshButton">
-           <property name="font">
-            <font>
-             <pointsize>15</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(0, 0, 255);
-color: rgb(255, 255, 255);</string>
-           </property>
-           <property name="text">
-            <string>Refresh</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
           <widget class="QPushButton" name="activateButton">
            <property name="font">
             <font>
-             <pointsize>15</pointsize>
+             <pointsize>14</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(0, 0, 255);
-color: rgb(255, 255, 255);</string>
+            <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);
+border-radius: 4px;
+ }
+QPushButton:pressed {
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+border-radius: 4px;
+ }</string>
            </property>
            <property name="text">
             <string>Activate</string>
@@ -277,212 +256,246 @@ color: rgb(255, 255, 255);</string>
          </item>
         </layout>
        </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="label_8">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(135, 135, 135);
+color: rgb(255, 255, 255);
+border-radius: 2px;</string>
+             </property>
+             <property name="text">
+              <string> Send </string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEditSend">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 4px;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QPushButton" name="sendMessageButton">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);
+border-radius: 4px;
+ }
+QPushButton:pressed {
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+border-radius: 4px;
+ }</string>
+             </property>
+             <property name="text">
+              <string>Send message</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="sendPackageButton">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);
+border-radius: 4px;
+ }
+QPushButton:pressed {
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+border-radius: 4px;
+ }</string>
+             </property>
+             <property name="text">
+              <string>Send 1 package</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_10">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(135, 135, 135);
+color: rgb(255, 255, 255);
+border-radius: 2px;</string>
+             </property>
+             <property name="text">
+              <string> Received </string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="labelRecieved">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>IBeamCursor</cursorShape>
+             </property>
+             <property name="tabletTracking">
+              <bool>false</bool>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::StrongFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(200, 200, 200);
+border-radius: 4px;
+cursor: text;
+</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
       </layout>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_9">
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="QLabel" name="label_8">
+          <widget class="QLabel" name="label_12">
            <property name="font">
             <font>
-             <pointsize>20</pointsize>
+             <pointsize>14</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(85, 255, 255);
-color: rgb(255, 255, 255);</string>
+            <string notr="true">background-color: rgb(135, 135, 135);
+color: rgb(255, 255, 255);
+border-radius: 2px;</string>
            </property>
            <property name="text">
-            <string>Send</string>
+            <string> Send message (bits) </string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEditSend">
+          <widget class="QLineEdit" name="labelSendBits">
            <property name="font">
             <font>
-             <pointsize>15</pointsize>
+             <pointsize>14</pointsize>
             </font>
            </property>
+           <property name="cursor">
+            <cursorShape>IBeamCursor</cursorShape>
+           </property>
+           <property name="tabletTracking">
+            <bool>false</bool>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(255, 255, 255);</string>
+            <string notr="true">background-color: rgb(200, 200, 200);
+border-radius: 4px;
+cursor: text;
+</string>
            </property>
           </widget>
          </item>
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_14">
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
-          <widget class="QPushButton" name="sendMessageButton">
+          <widget class="QLabel" name="label_14">
            <property name="font">
             <font>
-             <pointsize>15</pointsize>
+             <pointsize>14</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(0, 0, 255);
-color: rgb(255, 255, 255);</string>
+            <string notr="true">background-color: rgb(135, 135, 135);
+color: rgb(255, 255, 255);
+border-radius: 2px;</string>
            </property>
            <property name="text">
-            <string>Send message</string>
+            <string> Get message (bits) </string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="sendPackageButton">
+          <widget class="QLineEdit" name="labelGetBits">
            <property name="font">
             <font>
-             <pointsize>15</pointsize>
+             <pointsize>14</pointsize>
             </font>
            </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(0, 0, 255);
-color: rgb(255, 255, 255);</string>
+           <property name="cursor">
+            <cursorShape>IBeamCursor</cursorShape>
            </property>
-           <property name="text">
-            <string>Send 1 package</string>
+           <property name="tabletTracking">
+            <bool>false</bool>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(200, 200, 200);
+border-radius: 4px;
+cursor: text;
+</string>
            </property>
           </widget>
          </item>
         </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_10">
-         <item>
-          <widget class="QLabel" name="label_10">
-           <property name="font">
-            <font>
-             <pointsize>20</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(85, 255, 255);
-color: rgb(255, 255, 255);</string>
-           </property>
-           <property name="text">
-            <string>Received</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="labelRecieved">
-           <property name="font">
-            <font>
-             <pointsize>15</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(255, 255, 127);
-color: rgb(0, 0, 0);</string>
-           </property>
-           <property name="text">
-            <string>*Recieved message*</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_3">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>410</y>
-      <width>831</width>
-      <height>126</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_12">
-       <item>
-        <widget class="QLabel" name="label_12">
-         <property name="font">
-          <font>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(85, 255, 255);
-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="text">
-          <string>Send message (bits)</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="labelSendBits">
-         <property name="font">
-          <font>
-           <pointsize>8</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 127);
-color: rgb(0, 0, 0);</string>
-         </property>
-         <property name="text">
-          <string>*bits*</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_13">
-       <item>
-        <widget class="QLabel" name="label_14">
-         <property name="font">
-          <font>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(85, 255, 255);
-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="text">
-          <string>Get message (bits)</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="labelGetBits">
-         <property name="font">
-          <font>
-           <pointsize>8</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 127);
-color: rgb(0, 0, 0);</string>
-         </property>
-         <property name="text">
-          <string>*bits*</string>
-         </property>
-        </widget>
        </item>
       </layout>
      </item>
@@ -494,7 +507,7 @@ color: rgb(0, 0, 0);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>850</width>
+     <width>581</width>
      <height>20</height>
     </rect>
    </property>

@@ -14,13 +14,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
      connect(&serialPort, &QSerialPort::readyRead, this, &MainWindow::readyToRead);
 
-     //QIntValidator *validator = new QIntValidator(1, 2, ui->lineEditStopBits);
-     //ui->lineEditStopBits->setValidator(validator);
-
-     QRegExp regExp1("^(?:[1-9]|[1-9]\\d{0,5})$");
-     QRegExpValidator *validator1 = new QRegExpValidator(regExp1, ui->lineEditBaudRate);
-     ui->lineEditBaudRate->setValidator(validator1);
-
      QRegExp regExp2("^[1-2]|10$");
      QRegExpValidator *validator2 = new QRegExpValidator(regExp2, ui->lineEditStopBits);
      ui->lineEditStopBits->setValidator(validator2);
@@ -39,6 +32,8 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+
 void MainWindow::on_activateButton_clicked()
 {
     if (isPortActive)
@@ -47,7 +42,6 @@ void MainWindow::on_activateButton_clicked()
         isPortActive = false;
         ui->activateButton->setText("Activate");
 
-        ui->lineEditBaudRate->setEnabled(true);
         ui->comboBoxParity->setEnabled(true);
         ui->lineEditStopBits->setEnabled(true);
         ui->lineEditDataBits->setEnabled(true);
@@ -63,7 +57,6 @@ void MainWindow::on_activateButton_clicked()
         QSerialPortInfo port(port_name);
 
         serialPort.setPortName(port.portName());
-        serialPort.setBaudRate(ui->lineEditBaudRate->text().toInt());
         serialPort.setParity(ui->comboBoxCOMport->currentData().value<QSerialPort::Parity>());
         serialPort.setStopBits(QVariant(ui->lineEditStopBits->text().toInt()).value<QSerialPort::StopBits>());
         serialPort.setDataBits(QVariant(ui->lineEditDataBits->text().toInt()).value<QSerialPort::DataBits>());
@@ -72,7 +65,6 @@ void MainWindow::on_activateButton_clicked()
         if (isPortActive)
         {
             ui->activateButton->setText("Deactivate");
-            ui->lineEditBaudRate->setEnabled(false);
             ui->comboBoxParity->setEnabled(false);
             ui->lineEditStopBits->setEnabled(false);
             ui->lineEditDataBits->setEnabled(false);
@@ -82,6 +74,8 @@ void MainWindow::on_activateButton_clicked()
         }
     }
 }
+
+
 
 void MainWindow::on_sendMessageButton_clicked()
 {
@@ -93,7 +87,7 @@ void MainWindow::on_sendMessageButton_clicked()
         m_charToSendIndex = 0;
 
 
-        // Дані
+        // Data
         QString result = "";
         QByteArray byteArray = codec->fromUnicode(text);
         QString binaryString;
@@ -101,7 +95,7 @@ void MainWindow::on_sendMessageButton_clicked()
         QString parity;
         int byte;
 
-        // Дані з рядків стоп біти і біти затримки
+        // Data from stop bits and word delay
         int stopbits;
         QString stop;
 
@@ -112,11 +106,11 @@ void MainWindow::on_sendMessageButton_clicked()
 
         QString paritytext = ui->comboBoxParity->currentText();
         for (int i = 0; i < text.length(); i++) {
-            // Бітовий код символа
+            // Bit code of symbol
             byte = byteArray.at(i);
             binaryString = QString("%1").arg(QString::number(byte, 2), 8, '0').right(8);
 
-            // Визначення біта парності (в залежності від ComboBox)
+            // Definition parity bit (from ComboBox)
             count = binaryString.count(QChar('1'));
             if (paritytext == "EvenParity") {
                 if (count % 2 == 0)
@@ -130,7 +124,7 @@ void MainWindow::on_sendMessageButton_clicked()
                     parity = "0";
             }
 
-            // Визначення кількості стоп-бітів і бітів затримки
+            // Definition count of stop bits and word delay
             stopbits = ui->lineEditStopBits->text().toInt();
             stop = bit.repeated(stopbits);
             delaybits = ui->lineEditWordDelay->text().toInt();
@@ -145,6 +139,8 @@ void MainWindow::on_sendMessageButton_clicked()
         ui->labelSendBits->setText(result);
     }
 }
+
+
 
 void MainWindow::on_sendPackageButton_clicked()
 {
@@ -162,7 +158,7 @@ void MainWindow::on_sendPackageButton_clicked()
 
 
 
-            // Дані
+            // Data
             QString result = "";
             QByteArray byteArray = codec->fromUnicode(text);
             QString binaryString;
@@ -170,7 +166,7 @@ void MainWindow::on_sendPackageButton_clicked()
             QString parity;
             int byte;
 
-            // Дані з рядків стоп біти і біти затримки
+            // Data from stop bits and word delay
             int stopbits;
             QString stop;
 
@@ -181,11 +177,11 @@ void MainWindow::on_sendPackageButton_clicked()
 
             QString paritytext = ui->comboBoxParity->currentText();
 
-            // Бітовий код символа
+            // Bit code of symbol
             byte = byteArray.at(m_charToSendIndex);
             binaryString = QString("%1").arg(QString::number(byte, 2), 8, '0').right(8);
 
-            // Визначення біта парності (в залежності від ComboBox)
+            // Definition parity bit (from ComboBox)
             count = binaryString.count(QChar('1'));
             if (paritytext == "EvenParity") {
                 if (count % 2 == 0)
@@ -199,13 +195,13 @@ void MainWindow::on_sendPackageButton_clicked()
                     parity = "0";
             }
 
-            // Визначення кількості стоп-бітів і бітів затримки
+            // Definition count of stop bits and word delay
             stopbits = ui->lineEditStopBits->text().toInt();
             stop = bit.repeated(stopbits);
             delaybits = ui->lineEditWordDelay->text().toInt();
             delay = bit.repeated(delaybits);
 
-            result += "0" + binaryString + parity + stop;// + delay;
+            result += "0" + binaryString + parity + stop;
 
             ui->labelSendBits->setText(result);
 
@@ -219,6 +215,8 @@ void MainWindow::on_sendPackageButton_clicked()
     }
 }
 
+
+
 void MainWindow::on_refreshButton_clicked()
 {
     ui->comboBoxCOMport->clear();
@@ -227,13 +225,15 @@ void MainWindow::on_refreshButton_clicked()
         ui->comboBoxCOMport->addItem(port.portName());
 }
 
+
+
 void MainWindow::readyToRead()
 {
     QTextCodec *codec = QTextCodec::codecForName("CP866");
     QString text = QString(codec->toUnicode(serialPort.readAll()));
     ui->labelRecieved->setText(text);
 
-    // Дані
+    // Data
     QString result = "";
     QByteArray byteArray = codec->fromUnicode(text);
     QString binaryString;
@@ -241,7 +241,7 @@ void MainWindow::readyToRead()
     QString parity;
     int byte;
 
-    // Дані з рядків стоп біти і біти затримки
+    // Data from stop bits and word delay
     int stopbits;
     QString stop;
 
@@ -252,11 +252,11 @@ void MainWindow::readyToRead()
 
     QString paritytext = ui->comboBoxParity->currentText();
     for (int i = 0; i < text.length(); i++) {
-        // Бітовий код символа
+        // Bit code of symbol
         byte = byteArray.at(i);
         binaryString = QString("%1").arg(QString::number(byte, 2), 8, '0').right(8);
 
-        // Визначення біта парності (в залежності від ComboBox)
+        // Definition parity bit (from ComboBox)
         count = binaryString.count(QChar('1'));
         if (paritytext == "EvenParity") {
             if (count % 2 == 0)
@@ -270,7 +270,7 @@ void MainWindow::readyToRead()
                 parity = "0";
         }
 
-        // Визначення кількості стоп-бітів і бітів затримки
+        // Definition count of stop bits and word delay
         stopbits = ui->lineEditStopBits->text().toInt();
         stop = bit.repeated(stopbits);
         delaybits = ui->lineEditWordDelay->text().toInt();
